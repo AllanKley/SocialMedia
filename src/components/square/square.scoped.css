@@ -1,7 +1,7 @@
 .square {
   color: var(--background);
   background-color: var(--text-secondary);
-  border: 12px solid var(--accent);
+  border: 12px solid var(--accent_1);
   margin: auto;
   text-align: center;
   vertical-align: text-bottom;
