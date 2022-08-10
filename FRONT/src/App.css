@@ -1,0 +1,16 @@
+.app {
+  color: var(--text-primary);
+  height: 800vh;
+  font-size: large;
+  font-weight: bold;
+  transition: all .5s;
+  background-color: var(--background);
+}
+
+button {
+  color: var(--text-primary);
+  background-color: var(--background);
+  border: 2px var(--text-primary) solid;
+  float: right;
+  transition: all .5s;
+}

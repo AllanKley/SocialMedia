@@ -1,0 +1,35 @@
+.NavBar {
+    background-color: var(--background);
+    padding: 18px 0px 18px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6vw;
+    box-shadow: var(--nav_shadow);
+    
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.iconContainer{
+    background-color: var(--accent_1);
+    display: grid;
+    place-items: center;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+.profilePic{
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    object-fit: cover
+}
