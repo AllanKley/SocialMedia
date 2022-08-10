@@ -1,6 +1,6 @@
 .NavBar {
 
-
+    background-color: var(--background);
     padding: 18px 50px 18px 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -137,4 +137,10 @@
     height: 48px;
     border-radius: 6px;
     object-fit: cover
+}
+
+@media only screen and (max-width: 1100px) {
+    .NavBar{
+        
+    }
 }

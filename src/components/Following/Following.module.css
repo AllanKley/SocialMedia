@@ -1,0 +1,92 @@
+.Following {
+    margin-top: 80px;
+    margin-inline: auto;
+    width: 690px;
+ 
+    display: flex;
+    flex-direction: row;
+    gap: 34px;
+}
+
+.profile_container{
+    margin-top: 18px;
+}
+
+.profile{
+    position: sticky;
+    top: 20px;
+    width: 110px;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.picture_container{
+    width: 100%;
+
+}
+
+.picture{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 43px;
+    object-fit: cover;
+}
+
+.description{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.content h1{
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.content h2{
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--text-secondary);
+    position: relative;
+    margin-block: 10px;
+}
+
+.description h2:first-child::after{
+    position: absolute;
+    top: calc(50% - 2.5px);
+    right: -17.5px;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 100vmax;
+    background-color: var(--text-secondary);
+}
+
+@media only screen and (max-width: 800px) {
+    .Following{
+        width: 70%;
+    }
+    .profile{
+        width: 60px;
+        border-radius: 12px;
+    }
+    .picture{
+        border-radius: 30px;
+    }
+    .description{
+        gap: 15px;
+    }
+    .content h1{
+        font-size: 16px;
+    }
+    .content h2{
+        font-size: 12px;
+    }
+    .description h2:first-child::after{
+        right: -10px;    
+    }
+}
+

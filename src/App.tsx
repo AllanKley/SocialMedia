@@ -1,12 +1,33 @@
 import React from 'react';
 import Square from './components/square/Square';
 import NavBar from './components/NavBar/NavBar';
+import NavBarMobile from './components/NavBarMobile/NavBarMobile';
+import Following from './components/Following/Following';
 import useLocalStorage from 'use-local-storage';
 import './App.scoped.css';
+
+import { useMediaQuery } from "react-responsive";
 
 let themeChosen = 0;
 
 function App() {
+
+
+  const isDesktop = useMediaQuery({
+
+    query: "(min-width: 1224px)"
+
+  });
+
+  const isMobile = useMediaQuery({
+
+    query: "(max-width: 786px)"
+
+  });
+
+
+
+
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
@@ -56,16 +77,19 @@ function App() {
   return (
     <div className="app" data-theme={theme}>
 
-      <NavBar />
+      
 
-      <span>Easy Darkmode and Themes in React</span>
+      {isDesktop? <NavBar/> : <NavBarMobile/>}
 
       <button onClick={switchTheme}>
         Switch Theme
       </button>
 
       
-      <Square />
+      <Following />
+      <Following />
+      <Following />
+      <Following />
     </div>
   );
 }
