@@ -1,6 +1,6 @@
 .app {
   color: var(--text-primary);
-  height: 800vh;
+  height: 100%;
   font-size: large;
   font-weight: bold;
   transition: all .5s;
