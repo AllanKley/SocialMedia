@@ -14,7 +14,7 @@ namespace Model
         private string UserName {get;set;}
         private string Password { get; set; }
         private string Email { get; set; }
-        private int Age { get; set; }
+        private DateTime Birthday { get; set; }
         private string ProfilePic { get; set; }
         private string BannerPic { get; set; }
         private string About { get; set; }

@@ -7,4 +7,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Model
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\kla1ct\Desktop\SocialMedia2.0\API\Model\Model\
+=======
+build_property.ProjectDir = c:\Users\Aluno\Downloads\SocialMedia2.0\API\Model\Model\
+>>>>>>> b5b65494955ac5b16dc76d7e743ec1e7b759be36

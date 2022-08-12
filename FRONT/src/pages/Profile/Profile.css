@@ -1,1 +1,6 @@
-.Profile {}
+.Profile {
+    background-color: var(--background);
+    color: var(--text-primary);
+    height: 100%;
+    transition: all .5s;
+}

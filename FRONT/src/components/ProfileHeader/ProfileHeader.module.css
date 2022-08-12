@@ -1,0 +1,105 @@
+.ProfileHeader {
+    display:flex;
+    flex-direction: column;
+}
+
+.Cover{
+    height: 210px;
+    width: 100%;
+    position: relative;
+}
+
+.CoverImg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.iconContainer{
+    position: absolute;
+    left: 26px;
+    top: 26px;
+    background-color: var(--background);
+    display: grid;
+    place-items: center;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+.Info{
+    height: 134px;
+    
+    display: flex;
+    flex-direction: row;
+}
+
+.Profile{
+    width: 300px;
+    height: 100%;
+    position: relative;
+}
+
+.ProfilePic{
+    position: absolute;
+    top: calc(-1 * calc(178px / 2));
+    right: 50px;
+    width: 178px;
+    height: 178px;
+    object-fit: cover;
+    border-radius: 21px;
+    border: 3px solid var(--background);
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+h1{
+    font-size: 35px;
+    margin: 0;
+    margin-top: 13px;
+}
+
+h3{
+    margin: 22px 0 11px 0;
+    font-size: 18px;
+}
+
+h4{
+    margin: 0;
+    font-size: 16px;
+}
+.secondaryText{
+    color: var(--text-secondary);
+}
+
+.ProfileInfo{
+    flex-grow: 1;
+}
+
+.EditProfile{
+    width: 250px;
+   display: flex;
+   align-items: center;
+   justify-content: left;
+}
+
+.EditBtn{
+    width: 150px;
+    height: 50px;
+    border: 3px solid var(--accent_2);
+    border-radius: 13px;
+    font-size: 20px;
+    color: var(--accent_2);
+    display: grid;
+    place-items: center;
+
+}

@@ -14,12 +14,13 @@ for(let i = 0; i < 5; i++){
 }
 
 const Following = (props) => (
+  
+    <div className={styles.Following}>
 
-  <div className={styles.Following}>
+      {Posts.map((Post) => <BigCard Post = {Post}/>)}
 
-    {Posts.map((Post) => <BigCard Post = {Post}/>)}
-
-  </div>
+    </div>
+ 
 );
 
 export default Following;
