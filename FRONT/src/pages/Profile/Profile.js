@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Profile.css';
+import Header from '../../components/ProfileHeader/ProfileHeader';
 
 const Profile = () => (
-  <div className={styles.Profile}>
-    Profile Component
+  <div className="Profile">
+    <Header/>
   </div>
 );
 

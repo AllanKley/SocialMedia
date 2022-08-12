@@ -9,7 +9,7 @@ namespace Model
     public class Like : Interfaces.IDataManipulation
     {
         private int UserId { get; set; }
-        private Collection User { get; set; }
+        private User User { get; set; }
 
 
         private int PostId { get; set; }
