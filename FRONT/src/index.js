@@ -43,7 +43,7 @@ export default function App() {
 //   }
 
   return (
-    <div data-theme={theme}>
+    <div data-theme={"bubblegum_dark"}>
         
 
         <BrowserRouter>

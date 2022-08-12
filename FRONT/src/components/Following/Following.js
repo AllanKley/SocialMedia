@@ -7,6 +7,7 @@ for(let i = 0; i < 5; i++){
   Posts.push({
     Description: "Pau no seu cu",
     CreationDate: "3d",
+    PostPicRatio: .5,
     User: {
       Name: "Luis Hamilton"
     }

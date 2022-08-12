@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  font-weight: bold;
   font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
