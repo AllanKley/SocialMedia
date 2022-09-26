@@ -1,3 +1,9 @@
+create database SocialMedia
+go
+
+use SocialMedia
+go
+
 create table Theme (
  Id int identity primary key,
  ThemeName varchar(50),
@@ -38,11 +44,18 @@ go
 
 create table Post (
 	Id int identity primary key,
-	Picture varbinary(max),
 	Description varchar(300),
 	CreationDate datetime not null,
 	Comment bit,
 	UserId int FOREIGN KEY REFERENCES UserInfo(Id)
+);
+
+go
+
+create table Picture (
+	Id int identity primary key,
+	PictureString varbinary(max),
+	PostId int FOREIGN KEY REFERENCES Post(Id)
 );
 
 go
@@ -95,7 +108,7 @@ insert into Theme values('Light')
 
 go
 
-insert into UserInfo values('Allan', 'Kley', 'Akaeli', '1234', 'allanlkley@gmail.com', '2000-09-11', cast('foto de perfil' as varbinary(max)), cast('foto de cover' as varbinary(max)), 'minha descrição', '2022-09-01', 1);
+insert into UserInfo values('Allan', 'Kley', 'Akaeli', '1234', 'allanlkley@gmail.com', '2000-09-11', cast('foto de perfil' as varbinary(max)), cast('foto de cover' as varbinary(max)), 'minha descriÃ§Ã£o', '2022-09-01', 1);
 insert into UserInfo values('Preston','Woods','pharetra','VKO51NSX2MK','a.aliquet@protonmail.edu','2010-07-17',cast('OYW18WOQ4DJ811YJD13TBU1VA6VUJ62WAG5BT' as varbinary(max)),cast('TIN35NLH6KV684FDI70WQH2NO5GTR91INF3HX' as varbinary(max)),'Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc','2022-05-3',3);
 insert into UserInfo values('Iris','Soto','quam','TLL68KTM6DP','eros.turpis@protonmail.edu','2003-08-23',cast('UXD15SUD5GS327JCU44XBX4RN2PIH68IBV5LZ' as varbinary(max)),cast('SQC85XEF8SS855TKV11JED2JW7NCV48ULE1NP' as varbinary(max)),'Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam','2022-09-5',6);
 insert into UserInfo values('Carla','Navarro','tellus','VSI63NTI4IU','lorem@aol.org','1985-02-06',cast('SPR00WNK6NJ958IMU98QXN1FH9HTD28NRR7FN' as varbinary(max)),cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)),'sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis','2021-12-15',3);
@@ -150,22 +163,36 @@ insert into Tag values('Cosplay')
 
 go
 
-insert into Post values(cast('TIN35NLH6KV684FDI70WQH2NO5GTR91INF3HX' as varbinary(max)), 'minha descrição', '2022-09-01',0, 1);
-insert into Post values(cast('TIN35NLH6KV684FDI70WQH2NO5GTR91INF3HX' as varbinary(max)),'Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc','2022-05-3',0,3);
-insert into Post values(cast('SQC85XEF8SS855TKV11JED2JW7NCV48ULE1NP' as varbinary(max)),'Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam','2022-09-5',0,6);
-insert into Post values(cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)),'sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis','2021-12-15',0,3);
-insert into Post values(cast('RNT15JZZ1KP446TMO22JTQ2RG5GNB29XNO2MR' as varbinary(max)),'ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet','2021-10-3',0,6);
-insert into Post values(cast('IXV32NYE3VU577CEU88LNK9NX1CVO67SAA8QD' as varbinary(max)),'risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor.','2022-07-12',0,2);
-insert into Post values(cast('JJE75XXK6PG453GAM28ZQJ7BK2ISK24RKY2VD' as varbinary(max)),'dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique neque','2022-03-28',0,6);
-insert into Post values(cast('JBL04XAM4WJ174YMW41XLH5CA5JQS81OQT0OG' as varbinary(max)),'rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit','2022-05-28',0,3);
-insert into Post values(cast('XLH34KOO6XE255TNG84PEG1LW7RGX67ENQ1IX' as varbinary(max)),'vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris','2022-05-11',0,2);
-insert into Post values(cast('KXK14FPC7RQ465LUM47LTI4QK9HYD01VTU8KQ' as varbinary(max)),'aliquet. Phasellus fermentum convallis ligula.','2022-06-21',0,5);
-insert into Post values(cast('QSE50QDL2CX779OII69YQP5EV6MWU70VWQ8WR' as varbinary(max)),'sagittis felis. Donec tempor, est ac mattis semper, dui lectus rutrum','2022-01-7',1,4);
-insert into Post values(cast('JQQ41TIM5PP440QTG57QPL4PV3TCW51KGP7EJ' as varbinary(max)),'nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet','2022-06-8',1,3);
-insert into Post values(cast('VRI92UNB1WU622HYQ52GIB9FS0MCG34IWN6FP' as varbinary(max)),'ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum','2022-08-19',1,6);
-insert into Post values(cast('FEM17LDT0AL651RDA45XFF5YL6JNO54CTC4NL' as varbinary(max)),'Integer eu lacus. Quisque imperdiet, erat nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices,','2022-07-31',1,5);
-insert into Post values(cast('URE18KWK1HY573GSG88OFN7FQ6BJR70CQI2RZ' as varbinary(max)),'et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet','2022-04-15',1,2);
-insert into Post values(cast('HRV86BOW7KN994IKQ11VNV4RU0CSU40MKN1WO' as varbinary(max)),'ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien','2022-08-1',1,2);
+insert into Post values('minha descriÃ§Ã£o', '2022-09-01',0, 1);
+insert into Post values('Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc','2022-05-3',0,3);
+insert into Post values('Pellentesque ultricies dignissim lacus. Aliquam rutrum lorem ac risus. Morbi metus. Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam','2022-09-5',0,6);
+insert into Post values('sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis','2021-12-15',0,3);
+insert into Post values('ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet','2021-10-3',0,6);
+insert into Post values('risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor.','2022-07-12',0,2);
+insert into Post values('dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique neque','2022-03-28',0,6);
+insert into Post values('rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit','2022-05-28',0,3);
+insert into Post values('vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris','2022-05-11',0,2);
+insert into Post values('aliquet. Phasellus fermentum convallis ligula.','2022-06-21',0,5);
+insert into Post values('sagittis felis. Donec tempor, est ac mattis semper, dui lectus rutrum','2022-01-7',1,4);
+insert into Post values('nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit amet','2022-06-8',1,3);
+insert into Post values('ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum','2022-08-19',1,6);
+insert into Post values('Integer eu lacus. Quisque imperdiet, erat nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis eget varius ultrices,','2022-07-31',1,5);
+insert into Post values('et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet','2022-04-15',1,2);
+insert into Post values('ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien','2022-08-1',1,2);
+
+go
+
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
+insert into Picture values (cast('EKK30MSU3OR742HBD03ZJE9MI7LWP46LOX3VB' as varbinary(max)))
 
 go
 
