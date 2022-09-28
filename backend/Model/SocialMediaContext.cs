@@ -25,14 +25,14 @@ namespace Model
         public virtual DbSet<Tag> Tags { get; set; } = null!;
         public virtual DbSet<TagPost> TagPosts { get; set; } = null!;
         public virtual DbSet<Theme> Themes { get; set; } = null!;
-        public virtual DbSet<UserInfo> UserInfos { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserUser> UserUsers { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=SNCCH01LABF121\\SQLEXPRESS;Initial Catalog=SocialMedia;Integrated Security=True");
+                optionsBuilder.UseSqlServer(@"Data Source=SNCCH01LABF121\TEW_SQLEXPRESS;Initial Catalog=SocialMedia;Integrated Security=True");
             }
         }
 
@@ -170,7 +170,7 @@ namespace Model
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<UserInfo>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("UserInfo");
 
@@ -201,7 +201,7 @@ namespace Model
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Theme)
-                    .WithMany(p => p.UserInfos)
+                    .WithMany(p => p.Users)
                     .HasForeignKey(d => d.ThemeId)
                     .HasConstraintName("FK__UserInfo__ThemeI__267ABA7A");
             });

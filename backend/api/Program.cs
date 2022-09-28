@@ -1,3 +1,12 @@
+using Model;
+
+
+using (var context = new SocialMediaContext()){
+    context.Database.EnsureCreated();
+}
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

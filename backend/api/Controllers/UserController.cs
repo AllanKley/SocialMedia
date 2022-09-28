@@ -10,7 +10,6 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using System.Linq;
-using Model;
 
 namespace Controllers
 {
@@ -27,10 +26,10 @@ namespace Controllers
 
         [HttpPost]
         [Route("all")]
-        public void getAll()
+        public List<Model.User> getAll()
         {  
-            var all = UserInfo.GetAll();
-            Console.WriteLine(all);
+            var all = Model.User.GetAll();
+            return all;
         }
 
     }

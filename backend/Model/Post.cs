@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 namespace Model
 {
     public partial class Post
@@ -16,7 +17,7 @@ namespace Model
         public bool? Comment { get; set; }
         public int? UserId { get; set; }
 
-        public virtual UserInfo? User { get; set; }
+        public virtual User? User { get; set; }
         public virtual ICollection<Picture> Pictures { get; set; }
     }
 }

@@ -12,6 +12,6 @@ namespace Model
         public bool? Secret { get; set; }
         public int? UserId { get; set; }
 
-        public virtual UserInfo? User { get; set; }
+        public virtual User? User { get; set; }
     }
 }

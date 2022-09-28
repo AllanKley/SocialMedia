@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Model
 {
-    public partial class UserInfo
+    public class User
     {
-        public UserInfo()
+        public User()
         {
             Collections = new HashSet<Collection>();
             Posts = new HashSet<Post>();
@@ -29,8 +30,14 @@ namespace Model
         public virtual ICollection<Post> Posts { get; set; }
 
 
-        public static string GetAll(){
-            return "teste";
+        public static List<User> GetAll(){
+            using (var context = new SocialMediaContext())
+            {
+            
+                var usuarios = context.Users.ToList();
+
+                return usuarios;
+            }
         }
     }
 }
