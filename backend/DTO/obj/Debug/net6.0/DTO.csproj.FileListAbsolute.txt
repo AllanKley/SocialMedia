@@ -10,3 +10,15 @@ C:\Users\Aluno\Desktop\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.csproj.CoreC
 C:\Users\Aluno\Desktop\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.dll
 C:\Users\Aluno\Desktop\SocialMedia\backend\DTO\obj\Debug\net6.0\ref\DTO.dll
 C:\Users\Aluno\Desktop\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.pdb
+E:\SocialMedia2.0\SocialMedia\backend\DTO\bin\Debug\net6.0\DTO.deps.json
+E:\SocialMedia2.0\SocialMedia\backend\DTO\bin\Debug\net6.0\DTO.dll
+E:\SocialMedia2.0\SocialMedia\backend\DTO\bin\Debug\net6.0\ref\DTO.dll
+E:\SocialMedia2.0\SocialMedia\backend\DTO\bin\Debug\net6.0\DTO.pdb
+E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.csproj.AssemblyReference.cache
+E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.AssemblyInfoInputs.cache
+E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.AssemblyInfo.cs
+E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.csproj.CoreCompileInputs.cache
+E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.dll
+E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\ref\DTO.dll
+E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.pdb

@@ -196,6 +196,8 @@ namespace Model
 
                 entity.Property(e => e.Password).IsUnicode(false);
 
+                entity.Property(e => e.Active).IsUnicode(false);
+
                 entity.Property(e => e.UserName)
                     .HasMaxLength(70)
                     .IsUnicode(false);

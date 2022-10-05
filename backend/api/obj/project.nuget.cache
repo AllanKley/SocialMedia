@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xHgpeY1O4Vis2sPcZW8IKWEMER4LN4B+am3B653SLsw4G7S5A4gm5uTrycTBPIFLqCI1JpwMWS0CHmkwlqN7QQ==",
+  "dgSpecHash": "RB+DXi7QHzod6VURvNbRJyxKMji82qbHwgq9dIgTjoy6BgOms0JGG8TDqu0YEu42rJGnuH70ZFPKA/oodsYW9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aluno\\Desktop\\SocialMedia\\backend\\api\\api.csproj",
+  "projectFilePath": "E:\\SocialMedia2.0\\SocialMedia\\backend\\api\\api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Aluno\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\Aluno\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.7\\microsoft.aspnetcore.authentication.jwtbearer.6.0.7.nupkg.sha512",
     "C:\\Users\\Aluno\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.7\\microsoft.aspnetcore.jsonpatch.6.0.7.nupkg.sha512",
     "C:\\Users\\Aluno\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.7\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.7.nupkg.sha512",

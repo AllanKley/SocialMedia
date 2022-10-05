@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace Controllers
 {
-    [Route("user")]
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
         public IConfiguration _configuration; //add
@@ -24,13 +24,12 @@ namespace Controllers
         }
 
 
-        [HttpPost]
+        [HttpGet]
         [Route("all")]
         public List<Model.User> getAll()
         {  
             var all = Model.User.GetAll();
             return all;
         }
-
     }
 }

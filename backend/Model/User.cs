@@ -24,6 +24,7 @@ namespace Model
         public string? AboutUser { get; set; }
         public DateTime? CreationDate { get; set; }
         public int? ThemeId { get; set; }
+        public bool? Active {get; set;}
 
         public virtual Theme? Theme { get; set; }
         public virtual ICollection<Collection> Collections { get; set; }

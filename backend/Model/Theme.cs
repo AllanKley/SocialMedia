@@ -10,6 +10,12 @@ namespace Model
             Users = new HashSet<User>();
         }
 
+        public Theme(string themeName)
+        {
+            this.ThemeName = themeName;
+            Users = new HashSet<User>();
+        }
+
         public int Id { get; set; }
         public string? ThemeName { get; set; }
 
