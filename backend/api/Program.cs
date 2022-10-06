@@ -1,17 +1,21 @@
 using Model;
 using Bogus;
+using System.Linq;
 using static System.Text.Encoding;
 
 using (var context = new SocialMediaContext()){
     context.Database.EnsureDeleted();
     context.Database.EnsureCreated();
 
-    var t = new string[] {"Midnight", "Nature", "Lollipop", "Default", "Dark", "Light"};
-    var ThemeFaker = t.Select(theme => new Theme(theme));
 
+    // Theme Faker ------------------------
+    var themes = new string[] {"Midnight", "Nature", "Lollipop", "Default", "Dark", "Light"};
+    var ThemeFaker = themes.Select(theme => new Theme(theme)).ToList();
     context.Themes.AddRange(ThemeFaker);
     context.SaveChanges();
+    ThemeFaker.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
 
+    // User Faker ------------------------
     var UserFaker = new Faker<User>("pt_BR")
     .RuleFor(c => c.FirstName, f => f.Name.FirstName())
     .RuleFor(c => c.LastName, f => f.Name.LastName())
@@ -25,16 +29,52 @@ using (var context = new SocialMediaContext()){
     .RuleFor(c => c.UserName, (f, user) => f.Internet.UserName(user.FirstName, user.LastName))
     .RuleFor(c => c.ProfilePicture, f => ASCII.GetBytes(f.Internet.Avatar()))
     .RuleFor(c => c.CoverPicture, f => ASCII.GetBytes(f.Image.Nature(640, 480)));
-
-    
     var users = UserFaker.Generate(500);
-
     context.Users.AddRange(users);
-    users.ForEach(u => {context.Entry(u.Theme).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged;});
-    context.SaveChanges(); 
+    context.SaveChanges();
+    users.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
+
+    // UserUser Faker ----------------------
+    var UserUserFaker = new Faker<UserUser>("pt_BR")
+    .RuleFor(c => c.UserFollowed, f => f.PickRandom(users))
+    .RuleFor(c => c.UserFollowing, (f, user) => f.PickRandom(users.Where(u => u.Id != user.UserFollowed.Id)));
+    var userUsers = UserUserFaker.Generate(50);
+    context.UserUsers.AddRange(userUsers);
+    context.SaveChanges();
+    userUsers.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
+
+
+    // Tag Faker ---------------------------
+    var tags = new string[] {"Photograph", "PixelArt", "Painting", "Character Design", "Cosplay"};
+    var TagFaker = tags.Select(tag => new Tag(tag)).ToList();
+    context.Tags.AddRange(TagFaker);
+    context.SaveChanges();
+    TagFaker.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
+
+    // Post Faker --------------------------
+    var PostFaker = new Faker<Post>("pt_BR")
+    .RuleFor(c => c.Description, f => string.Join(" ", f.Lorem.Words(5)))
+    .RuleFor(c => c.CreationDate, f => f.Date.Recent(500))
+    .RuleFor(c => c.User, f => f.PickRandom(users))
+    .RuleFor(c => c.Comment, f => f.PickRandom(new bool[] {true, false}));
+    var posts = PostFaker.Generate(500);
+    context.Posts.AddRange(posts);
+    context.SaveChanges();
+    posts.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
+
+    // Picture Faker -----------------------
+    var PictureFaker = new Faker<Picture>("pt_BR")
+    .RuleFor(c => c.PictureString, f => ASCII.GetBytes(f.Image.PicsumUrl()))
+    .RuleFor(c => c.Post, f => f.PickRandom(posts));
+    var pictures = PictureFaker.Generate(50);
+    context.Pictures.AddRange(pictures);
+    context.SaveChanges();
+    pictures.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
+
+    // Comment Faker -----------------------
+    
+
 }
-
-
 
 var builder = WebApplication.CreateBuilder(args);
 

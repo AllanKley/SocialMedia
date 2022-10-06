@@ -5,6 +5,7 @@ namespace Model
 {
     public partial class UserUser
     {
+        public int Id { get; set; }
         public int? UserFollowingId { get; set; }
         public int? UserFollowedId { get; set; }
 

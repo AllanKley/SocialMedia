@@ -7,5 +7,10 @@ namespace Model
     {
         public int Id { get; set; }
         public string? TagName { get; set; }
+
+        public Tag(string tagName)
+        {
+            this.TagName = tagName;
+        }
     }
 }

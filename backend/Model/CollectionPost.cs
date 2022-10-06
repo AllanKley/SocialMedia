@@ -5,6 +5,7 @@ namespace Model
 {
     public partial class CollectionPost
     {
+        public int Id { get; set; }
         public int? CollectionId { get; set; }
         public int? PostId { get; set; }
 

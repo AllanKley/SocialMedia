@@ -60,7 +60,6 @@ namespace Model
 
             modelBuilder.Entity<CollectionPost>(entity =>
             {
-                entity.HasNoKey();
 
                 entity.ToTable("CollectionPost");
 
@@ -77,7 +76,6 @@ namespace Model
 
             modelBuilder.Entity<Comment>(entity =>
             {
-                entity.HasNoKey();
 
                 entity.ToTable("Comment");
 
@@ -120,7 +118,6 @@ namespace Model
 
             modelBuilder.Entity<PostLike>(entity =>
             {
-                entity.HasNoKey();
 
                 entity.ToTable("PostLike");
 
@@ -146,7 +143,6 @@ namespace Model
 
             modelBuilder.Entity<TagPost>(entity =>
             {
-                entity.HasNoKey();
 
                 entity.ToTable("TagPost");
 
@@ -210,7 +206,6 @@ namespace Model
 
             modelBuilder.Entity<UserUser>(entity =>
             {
-                entity.HasNoKey();
 
                 entity.ToTable("UserUser");
 
