@@ -45,11 +45,11 @@ using (var context = new SocialMediaContext()){
 
 
     // Tag Faker ---------------------------
-    var tags = new string[] {"Photograph", "PixelArt", "Painting", "Character Design", "Cosplay"};
-    var TagFaker = tags.Select(tag => new Tag(tag)).ToList();
-    context.Tags.AddRange(TagFaker);
+    var TagFaker = new string[] {"Photograph", "PixelArt", "Painting", "Character Design", "Cosplay"};
+    var tags = TagFaker.Select(tag => new Tag(tag)).ToList();
+    context.Tags.AddRange(tags);
     context.SaveChanges();
-    TagFaker.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
+    tags.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
 
     // Post Faker --------------------------
     var PostFaker = new Faker<Post>("pt_BR")
@@ -71,8 +71,29 @@ using (var context = new SocialMediaContext()){
     context.SaveChanges();
     pictures.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
 
+    // TagPost Faker -----------------------
+    var TagPostFaker = new Faker<TagPost>("pt_BR")
+    .RuleFor(c => c.Tag, f => f.PickRandom(tags))
+    .RuleFor(c => c.Post, f => f.PickRandom(posts));
+    var tagPosts = TagPostFaker.Generate(100);
+    context.TagPosts.AddRange(tagPosts);
+    context.SaveChanges();
+    tagPosts.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
+
+    // PostLike Faker -----------------------
+    var PostLikeFaker = new Faker<PostLike>("pt_BR")
+    .RuleFor(c => c.User, f => f.PickRandom(users))
+    .RuleFor(c => c.Post, f => f.PickRandom(posts));
+    var postLikes = PostLikeFaker.Generate(100);
+    context.PostLikes.AddRange(postLikes);
+    context.SaveChanges();
+    postLikes.ForEach(t => context.Entry(t).State = Microsoft.EntityFrameworkCore.EntityState.Unchanged);
+
+
     // Comment Faker -----------------------
-    
+    // var CommentFaker = new Faker<Comment>("pt_BR")
+    // .RuleFor(c => c.Comment, f => f.PickRandom(posts.Where(p => p.Comment == true)))
+    // .RuleFor(c => c.Post, f => f.PickRandom(posts));
 
 }
 

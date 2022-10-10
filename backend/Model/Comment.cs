@@ -9,7 +9,7 @@ namespace Model
         public int? CommentId { get; set; }
         public int? PostId { get; set; }
 
-        public virtual Post? CommentNavigation { get; set; }
+        public virtual Post? CommentPost { get; set; }
         public virtual Post? Post { get; set; }
     }
 }

@@ -79,7 +79,7 @@ namespace Model
 
                 entity.ToTable("Comment");
 
-                entity.HasOne(d => d.CommentNavigation)
+                entity.HasOne(d => d.CommentPost)
                     .WithMany()
                     .HasForeignKey(d => d.CommentId)
                     .HasConstraintName("FK__Comment__Comment__3E52440B");
