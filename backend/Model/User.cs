@@ -34,11 +34,29 @@ namespace Model
         public static List<User> GetAll(){
             using (var context = new SocialMediaContext())
             {
-            
                 var usuarios = context.Users.ToList();
 
                 return usuarios;
             }
         }
+
+        public static List<User> GetAllActive(){
+            using (var context = new SocialMediaContext())
+            {
+                var usuarios = context.Users.Where(c => c.Active == true).ToList();
+
+                return usuarios;
+            }
+        }
+
+        public void Save()
+        {
+            using(var context = new SocialMediaContext())
+            {
+                context.Add(this);
+                context.SaveChanges();
+            }
+        }
+
     }
 }

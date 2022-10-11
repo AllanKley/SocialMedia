@@ -10,6 +10,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using System.Linq;
+using Model;
 
 namespace Controllers
 {
@@ -31,5 +32,26 @@ namespace Controllers
             var all = Model.User.GetAll();
             return all;
         }
+
+        [HttpGet]
+        [Route("active")]
+        public List<Model.User> getAllActive()
+        {  
+            var all = Model.User.GetAllActive();
+            return all;
+        }
+
+        [HttpPost]
+        [Route("register")]
+        public string registerUser([FromBody] User user)
+        {  
+            user.Save();
+            return "Usuário cadastrado com sucesso";
+        }
+
+
+
+
+
     }
 }
