@@ -22,3 +22,15 @@ E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.csproj.CoreCompil
 E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.dll
 E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\ref\DTO.dll
 E:\SocialMedia2.0\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.pdb
+U:\Allan Kley\SocialMedia\backend\DTO\bin\Debug\net6.0\DTO.deps.json
+U:\Allan Kley\SocialMedia\backend\DTO\bin\Debug\net6.0\DTO.dll
+U:\Allan Kley\SocialMedia\backend\DTO\bin\Debug\net6.0\DTO.pdb
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.csproj.AssemblyReference.cache
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.AssemblyInfoInputs.cache
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.AssemblyInfo.cs
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.csproj.CoreCompileInputs.cache
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.dll
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\refint\DTO.dll
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\DTO.pdb
+U:\Allan Kley\SocialMedia\backend\DTO\obj\Debug\net6.0\ref\DTO.dll

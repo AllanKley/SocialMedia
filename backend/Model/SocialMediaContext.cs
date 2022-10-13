@@ -32,7 +32,7 @@ namespace Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=SNCCH01LABF121\TEW_SQLEXPRESS;Initial Catalog=SocialMedia;Integrated Security=True");
+                optionsBuilder.UseSqlServer(@"Data Source=JVLPC0553;Initial Catalog=SocialMedia;Integrated Security=True");
             }
         }
 

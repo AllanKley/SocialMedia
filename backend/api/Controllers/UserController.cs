@@ -24,7 +24,7 @@ namespace Controllers
             _configuration = config;
         }
 
-
+        //* ------------------------------------------------ Get All
         [HttpGet]
         [Route("all")]
         public List<Model.User> getAll()
@@ -33,6 +33,7 @@ namespace Controllers
             return all;
         }
 
+        //* ------------------------------------------------ Get All Active
         [HttpGet]
         [Route("active")]
         public List<Model.User> getAllActive()
@@ -41,6 +42,7 @@ namespace Controllers
             return all;
         }
 
+        //* ------------------------------------------------ Register User
         [HttpPost]
         [Route("register")]
         public string registerUser([FromBody] User user)
@@ -49,9 +51,42 @@ namespace Controllers
             return "Usuário cadastrado com sucesso";
         }
 
+        //* ------------------------------------------------ Update Info
+        [HttpPost]
+        [Route("update/info")]
+        public string updateUser([FromBody] User user)
+        {  
+            user.Update();
+            return "Usuário cadastrado com sucesso";
+        }
 
+        //* ------------------------------------------------ Update Theme
+        [HttpPost]
+        [Route("update/theme")]
+        public string updateUserTheme([FromBody] User user)
+        {  
+            user.Update();
+            return "Usuário cadastrado com sucesso";
+        }
 
+        //* ------------------------------------------------ Deactivate account
+        [HttpPost]
+        [Route("deativate")]
+        public string deactivate([FromBody] User user)
+        {  
+            user.Activity();
+            return "Usuário cadastrado com sucesso";
+        }
 
+        //* ------------------------------------------------ Find by Id
+        [HttpPost]
+        [Route("find/{id}")]
+        public User find(int id)
+        {  
+            User user = Model.User.find(id);
+            return user;
+        }
+        
 
     }
 }

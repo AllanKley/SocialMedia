@@ -58,5 +58,41 @@ namespace Model
             }
         }
 
+        public void Update(){
+            using(var context = new SocialMediaContext())
+            {
+                var user = context.Users
+                .Where(x => x.Id == this.Id)
+                .Single();
+
+                user.FirstName = this.FirstName;
+                user.LastName = this.LastName;
+                user.UserName = this.UserName;
+                user.Password = this.Password;
+                user.EmailAddress = this.EmailAddress;
+                user.Birthday = this.Birthday;
+                user.ProfilePicture = this.ProfilePicture;
+                user.CoverPicture = this.CoverPicture;
+                user.AboutUser = this.AboutUser;
+                
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateTheme(){
+            using(var context = new SocialMediaContext())
+            {
+                var user = context.Users
+                .Where(x => x.Id == this.Id)
+                .Single();
+
+                user.Theme = this.Theme;
+                
+                context.SaveChanges();
+            }
+        }
+
+        public void Deactivate(int id)
+
     }
 }
